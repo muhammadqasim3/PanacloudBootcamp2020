@@ -1,11 +1,17 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import counterContext from './CounterContext';
+import Parent from './Parent';
 
 function App() {
+  let countState = useState(1) //[count, setCount]
+  
   return (
-    <div>
-      
-    </div>
+    <counterContext.Provider value={countState}>
+      <div className="App">
+        <Parent/>
+      </div>
+    </counterContext.Provider>
   );
 }
 
